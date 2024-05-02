@@ -37,6 +37,7 @@ class Reporte:
 clientes = 0
 restos = 0
 todo = 0
+descuento = 0
 total = 0
 
 # Eleccion iniciara estatica para dar arranque al bucle while
@@ -58,7 +59,6 @@ def Todos():
         Con fstring se da formato al mensaje en pantalla con saltos tabulados (\t)
         y una separacion por centanas y cero(decimales)
         """
-        
         print(f"\t\t{lista[L].nombre}\t\t\t${lista[L].subtotal:,.0f}\t\t\t${lista[L].descuento:,.0f}\t\t\t${lista[L].neto:,.0f}")
         
         # L tendra un aumento de 1 por cada ingreso al bucle hasta que la lista quede en cero
@@ -79,12 +79,20 @@ while eleccion == 'S':
         # se pide el tipo de cliente horas y hoja de tipo entero (int)
         tipo_cliente = int(input("Ingrese el tipo de cliente: "))
         
+        # se pide el tipo de hojas y hoja de tipo entero (int)
+        hojas = int(input("Cuantas hojas compro?: "))
+        hoja = int(input("Ingrese el precio por cada hoja: "))
+        
+        # La variable subtotal tendra un redondeo de decimales y el calculo
+        subtotal = round(hojas * hoja)
+        
         """
         El ciclo if evauara que el tipo de cliente si este en los parametros
         de no estar, terminara la ejecucion del codigo
         """
+        
         if tipo_cliente == 1:
-            descuento = subtotal * 0.05
+            descuento = subtotal * 0.05   
         elif tipo_cliente == 2:
             descuento = subtotal * 0.08
         elif tipo_cliente == 3:
@@ -94,13 +102,6 @@ while eleccion == 'S':
         else:
             print("Tipo de cliente no valido")
             break
-        
-        # se pide el tipo de hojas y hoja de tipo entero (int)
-        hojas = int(input("Cuantas hojas compro?: "))
-        hoja = int(input("Ingrese el precio por cada hoja: "))
-        
-        # La variable subtotal tendra un redondeo de decimales y el calculo
-        subtotal = round(hojas * hoja)
         
         # Neto almacenara el caluclo del descuento 
         neto = subtotal - descuento
