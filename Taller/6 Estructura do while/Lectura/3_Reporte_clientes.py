@@ -34,11 +34,7 @@ class Reporte:
         self.neto = neto
         
 # Se inician variables en limpio para iniciara bucle y alacenar acumuladores
-clientes = 0
-restos = 0
-todo = 0
-descuento = 0
-total = 0
+clientes, restos, todo, descuento, total = 0,0,0,0,0
 
 # Eleccion iniciara estatica para dar arranque al bucle while
 eleccion = 'S'
@@ -59,7 +55,7 @@ def Todos():
         Con fstring se da formato al mensaje en pantalla con saltos tabulados (\t)
         y una separacion por centanas y cero(decimales)
         """
-        print(f"\t\t{lista[L].nombre}\t\t\t${lista[L].subtotal:,.0f}\t\t\t${lista[L].descuento:,.0f}\t\t\t${lista[L].neto:,.0f}")
+        print(f"\t\t{lista[L].nombre}\t\t${lista[L].subtotal:,.0f}\t\t${lista[L].descuento:,.0f}\t\t${lista[L].neto:,.0f}")
         
         # L tendra un aumento de 1 por cada ingreso al bucle hasta que la lista quede en cero
         L += 1
@@ -74,7 +70,7 @@ while eleccion == 'S':
         nombre = input("Ingrese el nombre del cliente: ")
         
         # Capitalizamos el nombre para poner la prier letra en mayus
-        nombre =nombre.capitalize()
+        nombre = nombre.capitalize()
         
         # se pide el tipo de cliente horas y hoja de tipo entero (int)
         tipo_cliente = int(input("Ingrese el tipo de cliente: "))
@@ -140,15 +136,16 @@ pantalla el reporte de cada empleado mas el acumulo de empleados y sueldos
 while eleccion == 'N':
     
     # Con saltos de linea y tabulaciones se da formato a la tabla
-    print("\n\t\t\t\t\t    REPORTE CLIENTES\n  \
-            \n\t\tNombres\t\t\tSubtotal\t\tDescuento\t\tNeto pagar\n  \
-            _____________________________________________________________________________________")
+    
+    print("\n\t\t\t\t\t\tREPORTE CLIENTES")
+    print("\n\t\tNombres\t\tSubtotal\t\tDescuento\t\tNeto pagar")
+    print("\t\t","-"*80)
     
     """
     Hacemos el llamado a la clase (todos) para que en el print se 
     acomode cada elemento que teniamos en la lista
     """
     Todos()
-    print(f"\n\t\t{clientes} Clientes\t\t${total:,.0f}\t\t\t${restos:,.0f}\t\t\t${todo:,.0f}")
+    print(f"\n\t\t{clientes} Clientes\t${total:,.0f}\t\t${restos:,.0f}\t\t${todo:,.0f}")
     print("\nPrograma finalizado\n")
     break

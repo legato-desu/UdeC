@@ -26,8 +26,7 @@ class Registro:
         self.sueldo = sueldo
 
 # Se inician variables en limpio para iniciara bucle y alacenar acumuladores
-empleados = 0
-salarios = 0
+empleados, salarios = 0,0
 eleccion = 'S'
 lista = []
 
@@ -93,10 +92,9 @@ pantalla el reporte de cada empleado mas el acumulo de empleados y sueldos
 while eleccion == 'N':
     
     # Con solo saltos de linea y tabulaciones se da formato a la tabla
-    print("\t\t\tREPORTE EMPLEADOS\n  \
-            NOMBRE\t\t\tSUELDO\n  \
-            __________________________________")
-    
+    print("\t\t\tREPORTE EMPLEADOS\n\t\tNOMBRE\t\t\tSUELDO")
+    print("\t\t","-" * 34)
+        
     # Hacemos el llamado a la clase (todos) para que en el print se 
     # acomode cada elemento que teniamos en la lista
     Todos()
