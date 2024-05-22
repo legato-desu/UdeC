@@ -20,3 +20,5 @@ for i in range(3):  # Filas
 
 # Imprimir matriz
 print(matriz)
+
+fin = input()
