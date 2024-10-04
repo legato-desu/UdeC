@@ -52,8 +52,8 @@ class Futbolista:
         if not self.expulsado:  # Solo se cuenta la falta si el jugador no está expulsado
             self.tamarillas += 1  # Incrementa la cantidad de tarjetas amarillas
             print(f"El jugador {self.nombre} ha cometido una falta. Total amarillas: {self.tamarillas}")
-            if self.tamarillas == 3:  # Si el jugador recibe 3 amarillas, se expulsa
-                print(f"{self.nombre} ha recibido 3 tarjetas amarillas y es expulsado con una tarjeta roja.")
+            if self.tamarillas == 2:  # Si el jugador recibe 2 amarillas, se expulsa
+                print(f"{self.nombre} ha recibido 2 tarjetas amarillas y es expulsado con una tarjeta roja.")
                 self.recibir_roja()  # Llama al método que maneja la tarjeta roja
             
     # Método que asigna tarjeta roja y expulsa al jugador
