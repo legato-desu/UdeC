@@ -34,7 +34,7 @@ class Futbolista:
 
     # Método para simular que el jugador patea el balón
     def patear(self):
-        print(f"El jugador {self.nombre} ha pateado el balón")
+        print(f"{self.nombre} ha pateado el balón")
 
     # Método que simula una falta cometida por el jugador
     def faulear(self):
@@ -103,7 +103,7 @@ def partido(futbolistas, duracion_partido):
             return
 
         jugador = random.choice(jugadores_disponibles)  # Selecciona un jugador aleatorio
-        evento = random.choice(["gol", "lesion", "faul"])  # Selecciona un evento aleatorio
+        evento = random.choice(["gol", "lesion", "faul","patea"])  # Selecciona un evento aleatorio
 
         # Llama al método correspondiente según el evento
         if evento == "gol":
@@ -112,6 +112,8 @@ def partido(futbolistas, duracion_partido):
             jugador.hacer_lesion()
         elif evento == "faul":
             jugador.faulear()
+        elif evento == "patea":
+            jugador.patear()
 
         time.sleep(1)  # Espera un segundo antes del siguiente evento
 
