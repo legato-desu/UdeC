@@ -106,7 +106,7 @@ class EquipoFutbol:
         if len(self.jugadores) >= 5:
             print(f"{self.nombre} no puede tener más de 5 jugadores")
         elif self.inversion < jugador.precio:
-            print(f"{self.nombre} no tiene suficiente dinero para comprar a {jugador.nombre}")
+            print(f"{self.nombre} no tiene suficiente dinero para comprar a {jugador.nombre} \n")
         else:
             self.jugadores.append(jugador)  # Añade al jugador al equipo
             self.inversion -= jugador.precio  # Resta el precio del jugador al presupuesto
@@ -173,10 +173,10 @@ class EquipoFutbol:
 # Función para crear equipos y jugadores automáticamente
 def crear_equipos():
     equipos = [
-        EquipoFutbol("Equipo 1", inversion=100, extranjeros=2),
-        EquipoFutbol("Equipo 2", inversion=80, extranjeros=1),
-        EquipoFutbol("Equipo 3", inversion=120, extranjeros=3),
-        EquipoFutbol("Equipo 4", inversion=90, extranjeros=0)
+        EquipoFutbol("Java", inversion=100, extranjeros=2),
+        EquipoFutbol("Python", inversion=80, extranjeros=1),
+        EquipoFutbol("JavaScript", inversion=120, extranjeros=3),
+        EquipoFutbol("Ruby", inversion=90, extranjeros=0)
     ]
     
     # Crear 3 jugadores por equipo
@@ -203,7 +203,7 @@ def campeonato(equipos):
 
     # Imprimir el ganador del campeonato
     ganador_campeonato = max(resultados, key=resultados.get)
-    print(f"\nEl ganador del campeonato es el {ganador_campeonato} con {resultados[ganador_campeonato]} victorias")
+    print(f"\nEl ganador del campeonato es {ganador_campeonato} con {resultados[ganador_campeonato]} victorias")
     time.sleep(5)
 
 # Ejecución del código principal
@@ -212,6 +212,6 @@ campeonato(equipos)  # Iniciar el campeonato
 
 # Mostrar estadísticas finales de los jugadores
 for equipo in equipos:
-    print(f"\nJugadores del {equipo.nombre}:")
+    print(f"\nJugadores de {equipo.nombre}:")
     for jugador in equipo.jugadores:
         jugador.fichas()
