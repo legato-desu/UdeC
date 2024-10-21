@@ -59,7 +59,7 @@ class Futbolista:
 
     # Método para simular que el jugador patea el balón
     def patear(self):
-        print(f"El jugador {self.nombre} ha pateado el balón")
+        print(f"El jugador {self.nombre} patea el balón")
 
     # Método para simular que el jugador comete una falta
     def faulear(self):
@@ -106,11 +106,12 @@ class EquipoFutbol:
         if len(self.jugadores) >= 5:
             print(f"{self.nombre} no puede tener más de 5 jugadores")
         elif self.inversion < jugador.precio:
-            print(f"{self.nombre} no tiene suficiente dinero para comprar a {jugador.nombre} \n")
+            print(f"{self.nombre} no tiene suficiente dinero para comprar a {jugador.nombre}")
         else:
             self.jugadores.append(jugador)  # Añade al jugador al equipo
             self.inversion -= jugador.precio  # Resta el precio del jugador al presupuesto
             print(f"{self.nombre} ha comprado a {jugador.nombre} por ${jugador.precio}. Inversión restante:${self.inversion}")
+            
 
     # Método para vender jugadores del equipo
     def vender_jugadores(self, jugador):
