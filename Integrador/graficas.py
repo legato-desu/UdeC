@@ -1,9 +1,38 @@
+import sys
 from matplotlib import pyplot
-import math
-import ingreso
+import numpy as np
+
+# Obtener las funciones pasadas desde ventana.py
+funcion1 = sys.argv[1]
+funcion2 = sys.argv[2]
+
+# Definir la primera función evaluando la expresión ingresada
+def f1(x):
+    return eval(funcion1)
+
+# Definir la segunda función evaluando la expresión ingresada
+def f2(x):
+    return eval(funcion2)
+
+# Definir el rango de x
+x = np.linspace(-10, 10, 100)
+
+# Graficar ambas funciones
+y1 = [f1(i) for i in x]
+y2 = [f2(i) for i in x]
+
+pyplot.plot(x, y1, label=f'f(x) = {funcion1}')
+pyplot.plot(x, y2, label=f'f(x) = {funcion2}')
+pyplot.axhline(0, color="black")  # Línea del eje x
+pyplot.axvline(0, color="black")  # Línea del eje y
+pyplot.legend()
+pyplot.show()
 
 
 
+
+
+"""
 window = tkinter.Tk()
     
 window.title("Funciones A & D")
@@ -61,4 +90,4 @@ boton_salida.bind("<Button-1>",exit)
 boton_salida.quit()
 
 
-window.mainloop()
+window.mainloop()"""
