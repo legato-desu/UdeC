@@ -1,39 +1,5 @@
 import random, time
 
-"""
-Compromiso:
-    - En otro script utilice la misma clase de Futbolista y
-    - crear la clase 
-    ________________________
-    |* EquipoFutbol        |
-    |----------------------|
-    |- nombre              |
-    |- inversion           |
-    |- extranjeros         |
-    |- golesfavor          |
-    |- golescontra         |
-    |----------------------|
-    |- comprarjugadores()  |
-    |- venderjugadores()   |
-    |- jugarpartido()      |
-    |- recuperarlesiones() |
-    |______________________|
-
-    crear minimo 4 equipos
-    crear minimo 3 jugadores por equipo
-    juegan todos contra todos una sola vez
-    imprimir quien gano el campeonato
-    planteese retos como:
-        - cuando se puede comprar un jugador
-        - puedo comprar todos los jugadores que quiera
-        - puedo tener mas de 3 jugadores
-        - puedo tener solo goleadores o solo defensas
-    todo esta en su imaginacion
-
-    Debe presentarse con una hoja con los datos del programa, su nombre y
-    la explicacion de la dinamica que diseño para este campeonato
-"""
-
 # Definimos la clase Futbolista que representa a un jugador con atributos como nombre, posición, precio, goles, lesiones y tarjetas.
 class Futbolista:
     def __init__(self, nombre, posicion, precio):
