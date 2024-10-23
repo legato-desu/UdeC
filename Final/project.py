@@ -1,7 +1,6 @@
 from matplotlib import pyplot
 import math
 
-"""
 # Función cuadrática.
 def f1(x):
     return x**2
@@ -47,3 +46,4 @@ pyplot.ylim(-5, 5)
 pyplot.savefig("output.png")
 # Mostrarlo.
 pyplot.show()
+"""
