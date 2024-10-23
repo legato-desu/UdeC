@@ -1,22 +1,20 @@
-import random
-
 class Personaje:
-    def __init__(self, nombre, inteligencia):
-        self.nombre = nombre
-        self.fuerza = random.randint(0, 10)
+    def __init__(self, nombre, fuerza, inteligencia, defensa, vida):
+        self.__nombre = nombre
+        self.__fuerza = fuerza
         self.inteligencia = inteligencia
-        self.defensa = random.randint(0, 10)
-        self.vida = random.randint(0, 10)
+        self.defensa = defensa
+        self.__vida = vida
         self.resistencia = self.fuerza ** 2
         self.turno = False
         self.muerto = not self.esta_vivo()
 
     def ver_atributos(self):
-        print(f"\n*** {self.nombre} *** ")
-        print(f" - Fuerza: {self.fuerza}")
+        print(f"\n*** {self.__nombre} *** ")
+        print(f" - Fuerza: {self.__fuerza}")
         print(f" - Inteligencia: {self.inteligencia}")
         print(f" - Defensa: {self.defensa}")
-        print(f" - Vida: {self.vida}")
+        print(f" - Vida: {self.__vida}")
         print(f" - Resistencia: {self.resistencia}")
         print(f" - Turno: {self.turno}")
 
@@ -49,18 +47,18 @@ class Personaje:
             print(enemigo.nombre, "ya estaba muerto")
             enemigo.muerto = True
 
-personaje_1 = Personaje("Caballero",6)
-personaje_2 = Personaje("Bruja",10)
+personaje_1 = Personaje("Caballero",6,6,7,8)
+personaje_2 = Personaje("Bruja",10,10,3,9)
 
 # objetos soldado y dragon
-personaje_3 = Personaje("Soldado",4)  
-personaje_4 = Personaje("Dragon",10)
+personaje_3 = Personaje("Soldado",4,4,8,7)  
+personaje_4 = Personaje("Dragon",10,10,10,10)
 
 personaje_1.ver_atributos()
 personaje_2.ver_atributos()
 personaje_3.ver_atributos()
 personaje_4.ver_atributos()
-
+"""
 # Ejecutar hasta que "dragon mate a soldado"
 while personaje_3.esta_vivo() and personaje_4.esta_vivo():
     personaje_4.atacar(personaje_3)
@@ -79,3 +77,4 @@ while personaje_3.esta_vivo():
     personaje_4.atacar(personaje_3)
 
 personaje_4.atacar(personaje_3)
+"""
