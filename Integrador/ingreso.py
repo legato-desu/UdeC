@@ -18,7 +18,7 @@ instruction_label = tk.Label(window, text="\tNota: para potencias x^2 = x**2",
 instruction_label.grid(column=0, row=0, columnspan=2, sticky=tk.W, padx=10, pady=5)
 
 # Etiqueta de función 1
-function1_label = ttk.Label(window, text="FUNCION 1:", background='lightgray', font=("Arial", 10, "bold"))
+function1_label = ttk.Label(window, text="Funcion 1:", background='lightgray', font=("Arial", 10, "bold"))
 function1_label.grid(column=0, row=1, sticky=tk.W, padx=10, pady=10)
 
 # Cuadro de entrada 1
@@ -26,7 +26,7 @@ function1_entry = ttk.Entry(window, font=("Arial", 10))
 function1_entry.grid(column=1, row=1, sticky=tk.W, padx=10, pady=10, ipadx=30)
 
 # Etiqueta de función 2
-function2_label = ttk.Label(window, text="FUNCION 2:", background='lightgray', font=("Arial", 10, "bold"))
+function2_label = ttk.Label(window, text="Funcion 2:", background='lightgray', font=("Arial", 10, "bold"))
 function2_label.grid(column=0, row=2, sticky=tk.W, padx=10, pady=10)
 
 # Cuadro de entrada 2
@@ -37,8 +37,21 @@ function2_entry.grid(column=1, row=2, sticky=tk.W, padx=10, pady=10, ipadx=30)
 def graficar():
     funcion1 = function1_entry.get()  # Obtener la primera función ingresada
     funcion2 = function2_entry.get()  # Obtener la segunda función ingresada
-    # Llama a graficas.py y pasa ambas funciones como argumentos
-    subprocess.run(["py", "integrador/graficas.py", funcion1, funcion2])
+    
+    # Si ambas están vacías, no hacer nada
+    if not funcion1 and not funcion2:
+        print("Debe ingresar al menos una función.")
+        return
+
+    # Si solo se ingresa la primera función
+    if funcion1 and not funcion2:
+        subprocess.run(["py", "integrador/graficas.py", funcion1])
+    # Si solo se ingresa la segunda función
+    elif not funcion1 and funcion2:
+        subprocess.run(["py", "integrador/graficas.py", funcion2])
+    # Si ambas funciones están llenas
+    else:
+        subprocess.run(["py", "integrador/graficas.py", funcion1, funcion2])
 
 # Botón de graficar
 graph_button = ttk.Button(window, text="GRAFICAR", width=10, command=graficar)
