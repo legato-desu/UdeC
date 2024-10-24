@@ -52,16 +52,11 @@ pip install -r requirements.txt
 - La aplicación generará un gráfico con ambas funciones, mostrando la sinusoide de sin(x) y la parábola de x^2 dentro del rango de x de -10 a 10.
 
 ## Capturas de Pantalla
-Aquí puedes incluir imágenes de la interfaz gráfica y del gráfico generado para que los usuarios vean cómo luce la aplicación en ejecución.
+<img width="378" height="214" src= "https://github.com/user-attachments/assets/3bba4e60-c7bb-44a1-b3cc-23f87ef6aa49"/>
+<img width="318" height="124" src= "https://github.com/user-attachments/assets/0c00c981-4ebb-4574-8466-88b90ae91d7f"/>
+<img width="378" height="214" src= "https://github.com/user-attachments/assets/73fe1dd5-4e7f-4ad2-9c88-0bbc9e087715"/>
+<img width="564" height="433" src= "https://github.com/user-attachments/assets/65f12f62-e076-4c2c-823e-e77432f03c11"/>
 
-```markdown
-![Ventana Inicial (Sin Datos)](Capturas/Ventana%20inicial%20(vacia).png)
-![Ventana Error](Capturas/Ventana%20error.png)
-![Ventana Inicial (Con Datos)](Capturas/Ventana%20inicial%20(con%20datos).png)
-![Ventana de Graficos](Capturas/Ventana%20de%20graficos.png)
-
-![Ventana error](C:\Users\Phantom\Documents\Developer\Python\UdeC\Integrador\Capturas de Pantalla)
-```
 ## Problemas Conocidos
 - **Errores de sintaxis:** Si ingresas una función con un formato incorrecto, el programa no podrá graficarla.
 - **Rango de gráficos:** Actualmente, las gráficas están limitadas a un rango de -10 a 10 tanto para x como para y. En futuras versiones se podría hacer ajustable.
