@@ -55,7 +55,11 @@ pip install -r requirements.txt
 Aquí puedes incluir imágenes de la interfaz gráfica y del gráfico generado para que los usuarios vean cómo luce la aplicación en ejecución.
 
 ```markdown
-![Descripción de la imagen](ruta/de/la/imagen.png)
+![Ventana Inicial (Sin Datos)](Capturas/Ventana%20inicial%20(vacia).png)
+![Ventana Error](Capturas/Ventana%20error.png)
+![Ventana Inicial (Con Datos)](Capturas/Ventana%20inicial%20(con%20datos).png)
+![Ventana de Graficos](Capturas/Ventana%20de%20graficos.png)
+
 ![Ventana error](C:\Users\Phantom\Documents\Developer\Python\UdeC\Integrador\Capturas de Pantalla)
 ```
 ## Problemas Conocidos
